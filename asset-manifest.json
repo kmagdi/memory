@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/kmagdi/memory.git/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/kmagdi/memory.git/static/js/main.07025c45.chunk.js",
+    "main.js.map": "/kmagdi/memory.git/static/js/main.07025c45.chunk.js.map",
+    "runtime-main.js": "/kmagdi/memory.git/static/js/runtime-main.304d2299.js",
+    "runtime-main.js.map": "/kmagdi/memory.git/static/js/runtime-main.304d2299.js.map",
+    "static/css/2.43b2b750.chunk.css": "/kmagdi/memory.git/static/css/2.43b2b750.chunk.css",
+    "static/js/2.850fba0a.chunk.js": "/kmagdi/memory.git/static/js/2.850fba0a.chunk.js",
+    "static/js/2.850fba0a.chunk.js.map": "/kmagdi/memory.git/static/js/2.850fba0a.chunk.js.map",
+    "static/js/3.aeba13bf.chunk.js": "/kmagdi/memory.git/static/js/3.aeba13bf.chunk.js",
+    "static/js/3.aeba13bf.chunk.js.map": "/kmagdi/memory.git/static/js/3.aeba13bf.chunk.js.map",
+    "index.html": "/kmagdi/memory.git/index.html",
+    "static/css/2.43b2b750.chunk.css.map": "/kmagdi/memory.git/static/css/2.43b2b750.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/kmagdi/memory.git/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.850fba0a.chunk.js.LICENSE.txt": "/kmagdi/memory.git/static/js/2.850fba0a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.304d2299.js",
+    "static/css/2.43b2b750.chunk.css",
+    "static/js/2.850fba0a.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.07025c45.chunk.js"
+  ]
+}
