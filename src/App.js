@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import Board from "./components/Board"
 import init from "./components/init"
 import  "../node_modules/bootstrap/dist/css/bootstrap.css"
-//import "./App.css"
+import "./App.css"
 
 
 
@@ -72,16 +72,13 @@ const preloadImages=()=>{
 }
 
   return(
-      <div className="container w-75">
-
-              <h2>Memory game</h2>
-            <select onChange={e=>setGameSize(e.target.value)}>
-                <option value="{2}">2x2</option>
+      <div className="container-fluid jumbotron border">
+        <b> Memory game size : </b><select onChange={e=>setGameSize(e.target.value)}>
                 <option value="{8}">4*4</option>
                 <option value="{18}">6*6</option>
                 <option value="{32}">8*8</option>
             </select>
-        <div>A rossz tippek szama:{clickCounter}</div>
+        <span> A rossz tippek szama:{clickCounter}</span>
 
               <Board
                 cards={cards}

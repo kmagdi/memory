@@ -6,7 +6,7 @@ export default function Board({disabled,cards,flipped,handleClick,solved,colNr})
     return(
         <div className="row">
             {
-                cards.map(card=>
+               cards.map(card=>
                     <Card
                         key={card.id}
                         id={card.id}
@@ -16,6 +16,7 @@ export default function Board({disabled,cards,flipped,handleClick,solved,colNr})
                         disabled={disabled || solved.includes(card.id)}
                         solved={solved.includes(card.id)}
                         colNr={colNr}
+                     
 
                     />
                     )

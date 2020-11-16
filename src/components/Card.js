@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import back from "./back.png"
 
 
-export const Card=({id,type,handleClick,flipped,disabled,solved,colNr})=>{
+export const Card=({id,type,handleClick,flipped,disabled,solved,colNr,counter})=>{
     console.log("oszlopok szama="+colNr)
+    colNr=colNr<8 ? 12/colNr : 2;
      return(
-        <div className={`col-${12/colNr} pb-1  text-center`} onClick={()=>disabled? null : handleClick(id)}>
-                   <img className="img-fluid" src={flipped || solved ? `${type}` : `${back}` }/>
-        </div>
+         <React.Fragment>
+            <div className={`col-${colNr} pb-1  text-center`} onClick={()=>disabled? null : handleClick(id)}>
+                    <img className="img-fluid img-fluid img-thumbnail  rounded" src={flipped || solved ? `${type}` : `${back}` }/>
+            </div>
+        </React.Fragment>
     )
 }
 
