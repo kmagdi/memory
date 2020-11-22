@@ -4,32 +4,24 @@ import init from "./components/init"
 import  "../node_modules/bootstrap/dist/css/bootstrap.css"
 import "./App.css"
 
-
+export const cardNumber= [4, 9, 16, 25];
 
 export const App=()=>{
-    const [gameSize,setGameSize]=useState(2)
+    const [gameSize,setGameSize]=useState(cardNumber[1])
     const [cards,setCards]=useState([])
     const [flipped,setFlipped]=useState([])
     const [solved,setSolved]=useState([])
     const [disabled,setDisabled]=useState(false) //hogy a felhasznalo ne kattinthasson tobbszor ugyanarra a kartyara
-    //const [dimension, setDimension]=useState(400)
     const [clickCounter,setClickCounter]=useState(0)
 
+    
 
     useEffect(()=>{
-        //setCards(init(boardSize))
-       //resizeBoard();
         setCards(init())
 
     },[])//csak legeloszr egyszer hivofdik meg
 
-    /*const resizeBoard=()=>{
-        setDimension(Math.min(document.documentElement.clientHeight,document.documentElement.clientWidth))
-    }
-    useEffect(()=>{
-        const resizeListener=window.addEventListener('resize',resizeBoard)
-        return ()=>window.removeEventListener('resize',resizeListener)//to clean up when component unmount
-    })*/
+    
 useEffect(()=>{
     preloadImages()
 },[])//annyiszor hivodik meg ahanyszor a cards valtozik
@@ -72,24 +64,26 @@ const preloadImages=()=>{
 }
 
   return(
-      <div className="container-fluid jumbotron border">
-        <b> Memory game size : </b><select onChange={e=>setGameSize(e.target.value)}>
-                <option value="{8}">4*4</option>
-                <option value="{18}">6*6</option>
-                <option value="{32}">8*8</option>
-            </select>
-        <span> A rossz tippek szama:{clickCounter}</span>
+      <div className="container-fluid jumbotron border shadow">
+        <div class="text-center d-flex justify-content-center flex-column">
+            <div class="flex flex-row ">
+                <span >Select game size: </span>
+                <select  value={gameSize} onChange={e=>setGameSize(e.target.value)}>
+                   {cardNumber.map(nr => <option value={nr}>{nr}x{nr}</option>)}        
+                </select>
+            </div>
+            <span class="text-right"> A rossz tippek szama:{clickCounter}</span>
 
-              <Board
-                cards={cards}
-                flipped={flipped}
-                handleClick={handleClick}
-                disabled={disabled}
-                solved={solved}
-                colNr={Math.sqrt(cards.length)}
-           />
+                <Board
+                    cards={cards}
+                    flipped={flipped}
+                    handleClick={handleClick}
+                    disabled={disabled}
+                    solved={solved}
+                    colNr={gameSize}
+            />
 
-
+        </div>
       </div>
   )
   }
