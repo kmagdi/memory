@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import  {Card} from "./Card"
 
 export default function Board({disabled,cards,flipped,handleClick,solved,colNr}){
@@ -23,14 +22,5 @@ export default function Board({disabled,cards,flipped,handleClick,solved,colNr})
             }
         </div>
     )
-
-}
-Board.propTypes={
-    cards:PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    flipped:PropTypes.arrayOf(PropTypes.number).isRequired,
-    handleClick:PropTypes.func.isRequired,
-    disabled:PropTypes.bool.isRequired,
-    solved:PropTypes.arrayOf(PropTypes.number).isRequired,
-    colNr:PropTypes.number.isRequired
 
 }

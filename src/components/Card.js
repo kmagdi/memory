@@ -15,14 +15,6 @@ export const Card=({id,type,handleClick,flipped,disabled,solved,colNr,counter})=
     )
 }
 
-Card.propTypes={
-    flipped:PropTypes.bool.isRequired,
-    handleClick:PropTypes.func.isRequired,
-    id:PropTypes.number.isRequired,
-    type:PropTypes.string.isRequired,
-    disabled:PropTypes.bool.isRequired,
-    solved:PropTypes.bool.isRequired,
-    colNr: PropTypes.number.isRequired
-}
+
 
 
