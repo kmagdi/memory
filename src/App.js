@@ -4,7 +4,7 @@ import init from "./components/init"
 import  "../node_modules/bootstrap/dist/css/bootstrap.css"
 import "./App.css"
 
-export const cardNumber= [4, 9, 16, 25];
+export const cardNumber= [2, 4, 6,8,10];
 
 export const App=()=>{
     const [gameSize,setGameSize]=useState(cardNumber[1])
@@ -13,15 +13,26 @@ export const App=()=>{
     const [solved,setSolved]=useState([])
     const [disabled,setDisabled]=useState(false) //hogy a felhasznalo ne kattinthasson tobbszor ugyanarra a kartyara
     const [clickCounter,setClickCounter]=useState(0)
-
-    
+    const [dimension,setDimension]=useState(400)
 
     useEffect(()=>{
-        setCards(init())
+        resizeBoard()
+        setCards(init(gameSize))
+    },[gameSize])//ha ures arrayt adunk itt meg akkor csak legeloszor egyszer hivodik meg a useEFFECT
+    //igy ahanyszor valtozik a gameSize annyiszor fog meghivodni itt a useEffect
 
-    },[])//csak legeloszr egyszer hivofdik meg
+useEffect(()=>{
+    const resizeListener=window.addEventListener('resize',resizeBoard)
+    return ()=>window.removeEventListener('resize',resizeListener)
+})
 
-    
+const resizeBoard=()=>{
+    setDimension(Math.min(
+        document.documentElement.clientHeight,
+        document.documentElement.clientWidth
+    ))
+}
+
 useEffect(()=>{
     preloadImages()
 },[])//annyiszor hivodik meg ahanyszor a cards valtozik
@@ -41,7 +52,7 @@ useEffect(()=>{
             }else{
                 setClickCounter(clickCounter+1)
                 setTimeout(resetCards,1000)
-            }
+            } 
 
         }
     }
@@ -64,15 +75,20 @@ const preloadImages=()=>{
 }
 
   return(
-      <div className="container-fluid jumbotron border shadow">
-        <div class="text-center d-flex justify-content-center flex-column">
-            <div class="flex flex-row ">
-                <span >Select game size: </span>
-                <select  value={gameSize} onChange={e=>setGameSize(e.target.value)}>
-                   {cardNumber.map(nr => <option value={nr}>{nr}x{nr}</option>)}        
+      <div className="container  border shadow p-2">
+      
+            <div className="row justify-content-center pt-2 ">
+                <div className="col-2 text-right" >
+                <h5 >Select game size: </h5>
+                </div>
+                <div className="col-2 text-left pb-2">
+                <select className="custom-select " value={gameSize} onChange={e=>setGameSize(e.target.value)}>
+                   {cardNumber.map(nr => <option  value={nr}>{nr}x{nr}</option>)}        
                 </select>
+                </div>
+                <div className="text-right text-warning"> A rossz tippek szama:<b>{clickCounter}</b></div>
             </div>
-            <span class="text-right"> A rossz tippek szama:{clickCounter}</span>
+            
 
                 <Board
                     cards={cards}
@@ -80,10 +96,11 @@ const preloadImages=()=>{
                     handleClick={handleClick}
                     disabled={disabled}
                     solved={solved}
-                    colNr={gameSize}
+                    gameSize={gameSize}
+                    dimension={dimension}
             />
 
         </div>
-      </div>
+
   )
   }
