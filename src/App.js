@@ -4,6 +4,12 @@ import init from "./components/init"
 import  "../node_modules/bootstrap/dist/css/bootstrap.css"
 import "./App.css"
 
+import countapi from 'countapi-js';
+
+countapi.visits().then((result) => {
+    console.log(" Az oldal látogatottsági mutatója:"+result.value);
+});
+
 export const cardNumber= [2, 4, 6,8,10];
 
 export const App=()=>{
@@ -79,7 +85,7 @@ const preloadImages=()=>{
       
             <div className="row justify-content-center pt-2 ">
                 <div className="col-2 text-right" >
-                <h5 >Select game size: </h5>
+                <h5 id="visits">Select game size: </h5>
                 </div>
                 <div className="col-2 text-left pb-2">
                 <select className="custom-select " value={gameSize} onChange={e=>setGameSize(e.target.value)}>
