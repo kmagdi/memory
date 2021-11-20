@@ -88,7 +88,7 @@ const preloadImages=()=>{
                 <select className="custom-select text-center w-25" value={gameSize} onChange={e=>setGameSize(e.target.value)}>
                    {cardNumber.map(nr => <option  value={nr}>{nr}x{nr}</option>)}        
                 </select>
-                <div className="btn btn-outline-danger ml-2 pt-2"> Mistakes: <b>{clickCounter}</b></div>
+                <div className="btn btn-outline-danger ml-2 mb-2"> Mistakes: <b>{clickCounter}</b></div>
             </div>
             <Board
                 cards={cards}

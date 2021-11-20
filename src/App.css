@@ -1,74 +1,71 @@
 .container {
-   /* background-image: url('./components/hegy.jpg');
-    background-size: cover;*/
-    background-color: rgb(241, 233, 160,0.25);
-    
-}
-                        
-.card{
-    border:none;
-    box-shadow: "3px 3px 13px 3px rgba(0,0,0,0.32)" ;
-}
-.board{
-    max-width: 600px;
-    border: 2px solid white;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
+  background-color: rgb(241, 233, 160, 0.25);
 }
 
-.box2{
-    flex: 1 0 calc(50% - 2px);
-    margin: 1px;
-    background-size:cover;
-    }
-    
-.box2:after{
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-    }
-.box4{
-    flex: 1 0 calc(25% - 2px);
-    margin: 1px;
-    background-size:cover;
+.card {
+  border: none;
+  box-shadow: "3px 3px 13px 3px rgba(0,0,0,0.32)";
+}
+.board {
+  max-width: 600px;
+  border: 2px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.box4:after{
-    content: '';
-    display: block;
-    padding-bottom: 100%;
+.box2 {
+  flex: 1 0 calc(50% - 2px);
+  margin: 1px;
+  background-size: cover;
 }
-.box6{
-    flex: 1 0 calc(16% - 2px);
-    margin: 1px;
-    background-size:cover;
-    }
-    
-.box6:after{
-     content: '';
-    display: block;
-    padding-bottom: 100%;
-    }
-.box8{
-        flex: 1 0 calc(12% - 2px);
-        margin: 1px;
-        background-size:cover;
-        }
- .box8:after{
-        content: '';
-        display: block;
-        padding-bottom: 100%;
-        }
- .box10{
-            flex: 1 0 calc(10% - 2px);
-            margin: 1px;
-            background-size:cover;
-            }
-            
-.box10:after{
-            content: '';
-            display: block;
-            padding-bottom: 100%;
-            }
-            
+
+.box2:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.box4 {
+  flex: 1 0 calc(25% - 2px);
+  margin: 1px;
+  background-size: cover;
+}
+
+.box4:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.box6 {
+  flex: 1 0 calc(16% - 2px);
+  margin: 1px;
+  background-size: cover;
+}
+
+.box6:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.box8 {
+  flex: 1 0 calc(12% - 2px);
+  margin: 1px;
+  background-size: cover;
+}
+.box8:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.box10 {
+  flex: 1 0 calc(10% - 2px);
+  margin: 1px;
+  background-size: cover;
+}
+
+.box10:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
