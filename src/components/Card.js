@@ -1,9 +1,9 @@
 import React from 'react';
 import back from "./yellow.png"
-//import nl2br from 'react-newline-to-break'; 
 
 
-export const Card=({id,type,handleClick,flipped,disabled,solved,gameSize,height,width,index,counter})=>{
+
+export const Card=({id,type,handleClick,flipped,disabled,solved,gameSize,height,index})=>{
     console.log("oszlopok szama="+gameSize+" height="+height)
     console.log("index="+index)
     const newRow=(index+1)%gameSize===0 ? true : false

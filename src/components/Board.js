@@ -15,7 +15,7 @@ export default function Board({disabled,cards,flipped,handleClick,solved,gameSiz
                         disabled={disabled || solved.includes(card.id)}
                         solved={solved.includes(card.id)}
                         gameSize={gameSize}
-                        width={dimension/4.5}
+                        
                         height={dimension/4.5}
                         index={index}
                     />

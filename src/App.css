@@ -1,6 +1,7 @@
 .container {
-    background-image: url('./components/hegy.jpg');
-    background-size: cover;
+   /* background-image: url('./components/hegy.jpg');
+    background-size: cover;*/
+    background-color: rgb(241, 233, 160,0.25);
     
 }
                         

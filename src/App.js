@@ -22,6 +22,7 @@ export const App=()=>{
     const [dimension,setDimension]=useState(400)
 
     useEffect(()=>{
+        setSolved([])
         resizeBoard()
         setCards(init(gameSize))
     },[gameSize])//ha ures arrayt adunk itt meg akkor csak legeloszor egyszer hivodik meg a useEFFECT
@@ -82,31 +83,22 @@ const preloadImages=()=>{
 
   return(
       <div className="container  border shadow p-2">
-      
-            <div className="row justify-content-center pt-2 ">
-                <div className="col-2 text-right" >
-                <h5 id="visits">Select game size: </h5>
-                </div>
-                <div className="col-2 text-left pb-2">
-                <select className="custom-select " value={gameSize} onChange={e=>setGameSize(e.target.value)}>
+            <div className="row justify-content-center pt-2 "> 
+                <h5 className="p-2" id="visits">Game size: </h5>
+                <select className="custom-select text-center w-25" value={gameSize} onChange={e=>setGameSize(e.target.value)}>
                    {cardNumber.map(nr => <option  value={nr}>{nr}x{nr}</option>)}        
                 </select>
-                </div>
-                <div className="text-right text-warning"> A rossz tippek szama:<b>{clickCounter}</b></div>
+                <div className="btn btn-outline-danger ml-2 pt-2"> Mistakes: <b>{clickCounter}</b></div>
             </div>
-            
-
-                <Board
-                    cards={cards}
-                    flipped={flipped}
-                    handleClick={handleClick}
-                    disabled={disabled}
-                    solved={solved}
-                    gameSize={gameSize}
-                    dimension={dimension}
+            <Board
+                cards={cards}
+                flipped={flipped}
+                handleClick={handleClick}
+                disabled={disabled}
+                solved={solved}
+                gameSize={gameSize}
+                dimension={dimension}
             />
-
         </div>
-
-  )
+     )
   }
